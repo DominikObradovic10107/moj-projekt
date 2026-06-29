@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Za Kristinu ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd1dc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    width:92%;
+    max-width:420px;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+h1{
+    color:#ff2d75;
+    font-size:26px;
+}
+
+h2{
+    color:#444;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    margin:10px;
+    transition:0.2s;
+}
+
+#yes{
+    background:#ff2d75;
+    color:white;
+}
+
+#no{
+    background:#777;
+    color:white;
+    position:relative;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="pitanje">
+
+<h1>❤️ Kristina ljubavi❤️</h1>
+
+<h2>Hoćeš li ići sa mnom van?</h2>
+
+<p>Od: <b>Tvoga Dominika</b> 💖</p>
+
+<button id="yes">DA ❤️</button>
+<button id="no">NE 🙈</button>
+
+</div>
+
+<div id="forma" class="hidden">
+
+<h1>Jeeee Kristina! 🥰</h1>
+
+<p>Odaberi datum:</p>
+<input type="date" id="datum">
+
+<p>Vrijeme:</p>
+<input type="time" id="vrijeme">
+
+<p>Gdje idemo?</p>
+<input type="text" id="mjesto" placeholder="Kino, šetnja, restoran...">
+
+<br><br>
+<button onclick="potvrdi()">Potvrdi ❤️</button>
+
+</div>
+
+<div id="kraj" class="hidden">
+
+<h1>❤️ Dogovoreno! ❤️</h1>
+
+<p id="ispis"></p>
+
+<h2>Jedva čekam naš spoj ❤️</h2>
+
+<p>Voli te,<br><b>Dominik Obradović</b> 💖</p>
+
+</div>
+
+</div>
+
+<script>
+
+const no = document.getElementById("no");
+const yes = document.getElementById("yes");
+
+let count = 0;
+
+// 🔥 radi i na mobitelu (touch + hover)
+function moveNoButton(){
+
+    count++;
+
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 150 - 75;
+
+    no.style.transform = `translate(${x}px, ${y}px)`;
+
+    yes.style.transform = `scale(${1 + count * 0.05})`;
+}
+
+// desktop
+no.addEventListener("mouseover", moveNoButton);
+
+// mobitel
+no.addEventListener("touchstart", function(e){
+    e.preventDefault();
+    moveNoButton();
+});
+
+// ako ipak klikne
+no.addEventListener("click", function(){
+    alert("🥺 Sigurna si? Probaj još jednom ❤️");
+});
+
+// DA
+yes.addEventListener("click", function(){
+    document.getElementById("pitanje").classList.add("hidden");
+    document.getElementById("forma").classList.remove("hidden");
+});
+
+// potvrda
+function potvrdi(){
+
+    let datum = document.getElementById("datum").value;
+    let vrijeme = document.getElementById("vrijeme").value;
+    let mjesto = document.getElementById("mjesto").value;
+
+    document.getElementById("forma").classList.add("hidden");
+    document.getElementById("kraj").classList.remove("hidden");
+
+    document.getElementById("ispis").innerHTML = `
+        📅 ${datum}<br>
+        🕒 ${vrijeme}<br>
+        📍 ${mjesto}
+    `;
+}
+
+    echo "# moj-projekt" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/DominikObradovic10107/moj-projekt.git
+git push -u origin main
+
+</script>
+
+</body>
+</html>
